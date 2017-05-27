@@ -6,6 +6,8 @@ cmake_minimum_required(VERSION 2.8)
 # Define project name
 project(fast_akaze)
 
+option(BUILD_TEST "Build test application" OFF)
+
 # Find OpenCV, you may need to set OpenCV_DIR variable
 # to the absolute path to the directory containing OpenCVConfig.cmake file
 # via the command line or GUI
@@ -55,8 +57,10 @@ endif()
 # Add akaze main code
 add_subdirectory(akaze)
 
-# Declare the executable target built from your sources
-add_executable(test_fast_akaze main.cpp)
+if(BUILD_TEST)
+  # Declare the executable target built from your sources
+  add_executable(test_fast_akaze main.cpp)
 
-# Link your application with OpenCV libraries
-target_link_libraries(test_fast_akaze akaze ${OpenCV_LIBS} ${CMAKE_THREAD_LIBS_INIT})
+  # Link your application with OpenCV libraries
+  target_link_libraries(test_fast_akaze akaze ${OpenCV_LIBS} ${CMAKE_THREAD_LIBS_INIT})
+endif(BUILD_TEST)
