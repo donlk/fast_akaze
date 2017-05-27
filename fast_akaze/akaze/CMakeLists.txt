@@ -6,4 +6,4 @@ add_library(akaze STATIC
     nldiffusion_functions.cpp
 )
 
-INSTALL(TARGETS akaze DESTINATION bin/)
+INSTALL(TARGETS akaze DESTINATION lib/)
