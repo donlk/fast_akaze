@@ -57,6 +57,11 @@ endif()
 # Add akaze main code
 add_subdirectory(akaze)
 
+INSTALL(
+  FILES features2d_akaze2.hpp
+  DESTINATION include
+)
+
 if(BUILD_TEST)
   # Declare the executable target built from your sources
   add_executable(test_fast_akaze main.cpp)
