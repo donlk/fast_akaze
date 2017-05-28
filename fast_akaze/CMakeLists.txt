@@ -57,9 +57,16 @@ endif()
 # Add akaze main code
 add_subdirectory(akaze)
 
-INSTALL(
-  FILES features2d_akaze2.hpp
-  DESTINATION include
+INSTALL(FILES
+  features2d_akaze2.hpp
+  akaze/AKAZEConfig.h
+  akaze/AKAZEFeatures.h
+  akaze/nldiffusion_functions.h
+  akaze/TEvolution.h
+  akaze/fed.h
+  akaze/utils.h
+  DESTINATION
+  include/fast_akaze
 )
 
 if(BUILD_TEST)
