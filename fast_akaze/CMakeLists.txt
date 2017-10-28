@@ -74,5 +74,5 @@ if(BUILD_TEST)
   add_executable(test_fast_akaze main.cpp)
 
   # Link your application with OpenCV libraries
-  target_link_libraries(test_fast_akaze akaze ${OpenCV_LIBS} ${CMAKE_THREAD_LIBS_INIT})
+  target_link_libraries(test_fast_akaze fast_akaze ${OpenCV_LIBS} ${CMAKE_THREAD_LIBS_INIT})
 endif(BUILD_TEST)
